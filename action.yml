@@ -23,7 +23,8 @@ runs:
     - uses: actions/checkout@v4
       with:
         ref: ${{ github.event.pull_request.head.sha }}
-        persist-credentials: false  # Just for security considerations
+        persist-credentials: true
+        token: ${{ github.token }}
 
     - name: Setup Julia
       uses: julia-actions/setup-julia@v2
