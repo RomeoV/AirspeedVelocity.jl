@@ -21,6 +21,8 @@ runs:
   using: composite
   steps:
     - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
 
     - name: Setup Julia
       uses: julia-actions/setup-julia@v2
